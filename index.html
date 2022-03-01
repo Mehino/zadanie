@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>	
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title> Odliczanie do wakacji </title>
+	
+	<script type="text/javascript">
+	
+	function odliczanie()
+	{
+
+		var dzisiaj = new Date();
+		
+		var dzien = dzisiaj.getDate();
+		var miesiac = dzisiaj.getMonth() +1;
+		var rok = dzisiaj.getFullYear();
+		
+		var godzina = dzisiaj.getHours();
+		if(godzina<10) godzina = "0"+godzina;
+		var minuta = dzisiaj.getMinutes();
+		if(minuta<10) minuta = "0"+minuta;
+		var sekunda = dzisiaj.getSeconds();
+		if(sekunda<10) sekunda= "0"+sekunda;
+		var miesiac = dzisiaj.getMonth()+1;
+		if(miesiac<10) miesiac= "0"+ miesiac;
+		var rok = dzisiaj.getFullYear();
+		if(rok<10) rok= "0"+ rok;
+		var milisekundy = dzisiaj.getTime();
+		
+		var end = new Date("06/27/2022");
+		var endDzien = end.getDate();
+		if(endDzien<10) endDzien= "0"+ endDzien;
+		var endMiesiac = end.getMonth()+1;
+		if(endMiesiac<10) endMiesiac= "0"+ endMiesiac;
+		var endRok = end.getFullYear();
+		if(endRok<10) endRok= "0"+ endRok;
+		var milisekundy2 = end.getTime();
+		if(endDzien<10) endDzien= "0"+ endDzien;
+        var endgodzina = end.getHours();
+		if(endgodzina<10) endgodzina= "0"+ endgodzina;
+		
+		var pozostalo = milisekundy2 - milisekundy; 
+		var dni = Math.floor(pozostalo/86400000); 
+        var godzinydo = Math.floor(pozostalo/3600000);
+        var minutydo = Math.floor(pozostalo/60000);
+        var sekundydo = Math.floor(pozostalo/1000);
+		
+	
+	
+		document.getElementById("logo1").innerHTML = "Aktualna data: "+dzien+"/"+miesiac+"/"+rok;
+		document.getElementById("logo2").innerHTML ="Data wydarzenia, do którego obliczamy liczbę dni: 24/06/2022";
+		document.getElementById("logo3").innerHTML = "Pozostało: "+ dni+" dni";
+		document.getElementById("logo4").innerHTML = "Czyli: "+godzinydo+" godzin";
+		document.getElementById("logo5").innerHTML = "Czyli: "+minutydo+" minut";
+		document.getElementById("logo6").innerHTML = "Czyli: "+sekundydo+" sekund";
+	
+	    setTimeout("odliczanie()",1000);
+	}
+	
+	
+	</script>
+	
+	<style>
+	#container
+	{
+		width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#logo0
+	{
+	background-color:dodgerblue;
+	color: darkslateblue;
+	text-align:center;
+	padding: 20px;
+	}
+	#logo1
+	{
+	background-color:darkgrey;
+	color: black;
+	text-align:center;
+	padding: 20px;
+	}
+	#logo2
+	{
+	background-color:darkgrey;
+	color: black;
+	text-align:center;
+	padding: 10px;
+	}
+	#logo3
+	{
+	background-color:darkgrey;
+	color: black;
+	text-align:center;
+	padding: 20px;
+	}
+	#logo4
+	{
+	background-color:darkgrey;
+	color: black;
+	text-align:center;
+	padding: 20px;
+	}
+	#logo5
+	{
+	background-color:darkgrey;
+	color: black;
+	text-align:center;
+	padding: 20px;
+	}
+	#logo6
+	{
+	background-color:darkgrey;
+	color: black;
+	text-align:center;
+	padding: 20px;
+	}
+</style>
+</head>
+
+<body onload="odliczanie();">
+<body bgcolor="lightblue">
+  
+	<div id="container">
+		
+		<div id="logo0">
+		<h1> Czas do końca roku szkolnego <h1>
+		</div>
+		
+		<div id="logo1"></div>
+		
+		<div id="logo2"></div>
+		
+		<div id="logo3"></div>
+		 
+		 <div id="logo4"></div>
+		 
+		 <div id="logo5"></div>
+		 
+		 <div id="logo6"></div>
+		 </div>
+		
+		
+</body>
+</html>
